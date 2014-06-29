@@ -13,14 +13,18 @@ struct Board{
     QFrame *frame;
     Board()
     {
+        // review notes: А можно ли тут использовать список инициализации?
         cell = Nothing;
         frame = new QFrame;
         frame->setStyleSheet("border-image: url(:/images/images/back.bmp);");
     }
+
     void SetX(){cell = X; frame->setStyleSheet("border-image: url(:/images/images/X.bmp);");}
     void SetO(){cell = O; frame->setStyleSheet("border-image: url(:/images/images/O.bmp);");}
     void Reset(){cell = Nothing; frame->setStyleSheet("border-image: url(:/images/images/back.bmp);");}
 };
+
+// review notes: А где бы получше разместить данное объявление?
 const int BoardSize = 3;
 
 
@@ -34,6 +38,7 @@ public:
 signals:
     void oScoreChanged(int oScore);
     void xScoreChanged(int xScore);
+    // review notes: Лучше бы доделать! :-)
     void turnChanged(bool turn);
 public slots:
 

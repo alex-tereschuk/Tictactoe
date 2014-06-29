@@ -3,6 +3,7 @@
 GameBoard::GameBoard(QWidget *parent) :
     QFrame(parent)
 {
+    // review notes: Вам знаком список инициализации членов класса? Стоит его здесь применять или нет?
     turn = true;
     xScore = 0;
     oScore = 0;
@@ -55,6 +56,7 @@ void GameBoard::mousePressEvent(QMouseEvent *e)
             }
 }
 
+// review notes: Как вы считаете, не является ли данный метод очень большим по размеру?
 Symbol GameBoard::Victory()
 {
     //Horizontal lines
